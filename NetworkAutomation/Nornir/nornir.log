@@ -1,0 +1,360 @@
+2021-07-18 00:23:25,730 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces']} on 2 hosts
+2021-07-18 00:23:30,845 - nornir.core.task -    ERROR -      start() - Host 'vIOS': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 935, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/util.py", line 283, in retry_on_signal
+    return function()
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/napalm/base/base.py", line 92, in _netmiko_open
+    **netmiko_optional_args
+  File "/usr/local/lib/python3.6/site-packages/netmiko/ssh_dispatcher.py", line 326, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/cisco/cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 350, in __init__
+    self._open()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 355, in _open
+    self.establish_connection()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 957, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.2.111:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "/usr/local/lib/python3.6/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/usr/local/lib/python3.6/site-packages/napalm/ios/ios.py", line 170, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "/usr/local/lib/python3.6/site-packages/napalm/base/base.py", line 95, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.2.111
+
+2021-07-18 00:25:50,893 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces']} on 2 hosts
+2021-07-18 00:25:55,912 - nornir.core.task -    ERROR -      start() - Host 'vIOS': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 935, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/util.py", line 283, in retry_on_signal
+    return function()
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/napalm/base/base.py", line 92, in _netmiko_open
+    **netmiko_optional_args
+  File "/usr/local/lib/python3.6/site-packages/netmiko/ssh_dispatcher.py", line 326, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/cisco/cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 350, in __init__
+    self._open()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 355, in _open
+    self.establish_connection()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 957, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.2.111:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "/usr/local/lib/python3.6/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/usr/local/lib/python3.6/site-packages/napalm/ios/ios.py", line 170, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "/usr/local/lib/python3.6/site-packages/napalm/base/base.py", line 95, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.2.111
+
+2021-07-18 00:26:34,899 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces']} on 2 hosts
+2021-07-18 00:26:39,942 - nornir.core.task -    ERROR -      start() - Host 'vIOS-R1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 935, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/util.py", line 283, in retry_on_signal
+    return function()
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/napalm/base/base.py", line 92, in _netmiko_open
+    **netmiko_optional_args
+  File "/usr/local/lib/python3.6/site-packages/netmiko/ssh_dispatcher.py", line 326, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/cisco/cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 350, in __init__
+    self._open()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 355, in _open
+    self.establish_connection()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 957, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.2.111:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "/usr/local/lib/python3.6/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/usr/local/lib/python3.6/site-packages/napalm/ios/ios.py", line 170, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "/usr/local/lib/python3.6/site-packages/napalm/base/base.py", line 95, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.2.111
+
+2021-07-18 00:32:41,493 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces']} on 2 hosts
+2021-07-20 15:06:51,472 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces']} on 2 hosts
+2021-07-20 15:07:19,928 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces']} on 2 hosts
+2021-07-20 15:07:33,015 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces']} on 2 hosts
+2021-07-20 15:08:55,229 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces']} on 2 hosts
+2021-07-20 15:11:05,171 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces']} on 2 hosts
+2021-07-20 15:12:08,907 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces']} on 2 hosts
+2021-07-20 15:12:29,301 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces']} on 2 hosts
+2021-07-20 15:12:45,187 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces']} on 2 hosts
+2021-07-20 15:13:31,050 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces']} on 2 hosts
+2021-07-20 15:39:07,670 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces']} on 2 hosts
+2021-07-20 15:39:21,740 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces']} on 2 hosts
+2021-07-20 16:17:54,609 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': 'show ip int br'} on 2 hosts
+2021-07-20 16:19:01,561 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'commands': 'show ip int br'} on 2 hosts
+2021-07-20 16:19:02,156 - nornir.core.task -    ERROR -      start() - Host 'vIOS-R1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 31, in netmiko_send_config
+    raise ValueError("Must specify either config_commands or config_file")
+ValueError: Must specify either config_commands or config_file
+
+2021-07-20 16:19:02,176 - nornir.core.task -    ERROR -      start() - Host 'vEOS': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 31, in netmiko_send_config
+    raise ValueError("Must specify either config_commands or config_file")
+ValueError: Must specify either config_commands or config_file
+
+2021-07-20 16:19:19,282 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': 'show ip int br'} on 2 hosts
+2021-07-20 16:20:22,992 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': 'do show ip int br'} on 2 hosts
+2021-07-20 16:33:50,093 -  nornir.core -     INFO -        run() - Running task 'configure' with args {} on 2 hosts
+2021-07-20 16:33:50,095 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo100', 'int lo101']} on 2 hosts
+2021-07-20 16:33:50,097 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo100', 'int lo101']} on 2 hosts
+2021-07-20 16:33:51,351 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'do show ip int br'} on 2 hosts
+2021-07-20 16:33:53,060 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'do show ip int br'} on 2 hosts
+2021-07-20 16:34:53,088 -  nornir.core -     INFO -        run() - Running task 'configure' with args {} on 2 hosts
+2021-07-20 16:34:53,089 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo100', 'int lo101']} on 2 hosts
+2021-07-20 16:34:53,090 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo100', 'int lo101']} on 2 hosts
+2021-07-20 16:34:54,208 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'do show ip int br'} on 2 hosts
+2021-07-20 16:34:55,050 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'do show ip int br'} on 2 hosts
+2021-07-20 16:35:46,898 -  nornir.core -     INFO -        run() - Running task 'configure' with args {} on 2 hosts
+2021-07-20 16:35:46,899 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo200', 'int lo201']} on 2 hosts
+2021-07-20 16:35:46,900 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo200', 'int lo201']} on 2 hosts
+2021-07-20 16:35:48,162 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'do show ip int br'} on 2 hosts
+2021-07-20 16:35:48,189 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'do show ip int br'} on 2 hosts
+2021-07-20 16:35:58,469 - nornir.core.task -    ERROR -      start() - Host 'vEOS': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/utilities.py", line 500, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 1537, in send_command
+    search_pattern
+OSError: Search pattern never detected in send_command: vEOS\-SW\#
+
+2021-07-20 16:36:08,350 - nornir.core.task -    ERROR -      start() - Host 'vIOS-R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 573, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/utilities.py", line 500, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 1496, in send_command
+    new_data = self.read_until_pattern(pattern=re.escape(cmd))
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 655, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 584, in _read_channel_expect
+    "Timed-out reading channel, data not available."
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2021-07-20 16:36:28,419 - nornir.core.task -    ERROR -      start() - Host 'vIOS-R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 573, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/utilities.py", line 500, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 1496, in send_command
+    new_data = self.read_until_pattern(pattern=re.escape(cmd))
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 655, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 584, in _read_channel_expect
+    "Timed-out reading channel, data not available."
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2021-07-20 16:37:23,317 -  nornir.core -     INFO -        run() - Running task 'configure' with args {} on 2 hosts
+2021-07-20 16:37:23,318 - nornir.core.task -    ERROR -      start() - Host 'vIOS-R1': task 'configure' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: configure() takes 0 positional arguments but 1 was given
+
+2021-07-20 16:37:23,319 - nornir.core.task -    ERROR -      start() - Host 'vEOS': task 'configure' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: configure() takes 0 positional arguments but 1 was given
+
+2021-07-20 16:38:23,148 -  nornir.core -     INFO -        run() - Running task 'configure' with args {} on 2 hosts
+2021-07-20 16:38:23,149 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo200', 'int lo201']} on 2 hosts
+2021-07-20 16:38:23,150 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo200', 'int lo201']} on 2 hosts
+2021-07-20 16:38:24,233 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'do show ip int br'} on 2 hosts
+2021-07-20 16:38:25,100 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'do show ip int br'} on 2 hosts
+2021-07-20 16:40:14,481 -  nornir.core -     INFO -        run() - Running task 'configure' with args {} on 2 hosts
+2021-07-20 16:40:14,482 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo200', 'int lo201']} on 2 hosts
+2021-07-20 16:40:14,483 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo200', 'int lo201']} on 2 hosts
+2021-07-20 16:40:15,616 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'do show ip int br'} on 2 hosts
+2021-07-20 16:40:16,935 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'do show ip int br'} on 2 hosts
+2021-07-20 16:43:07,023 -  nornir.core -     INFO -        run() - Running task 'configure' with args {} on 2 hosts
+2021-07-20 16:43:07,025 - nornir.core.task -    ERROR -      start() - Host 'vIOS-R1': task 'configure' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Nornir-NetmikoSendCommand.py", line 10, in configure
+    loopbackTask.nr.run(task=netmiko_send_config, config_commands = ["int lo200", "int lo201"])
+NameError: name 'loopbackTask' is not defined
+
+2021-07-20 16:43:07,026 - nornir.core.task -    ERROR -      start() - Host 'vEOS': task 'configure' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Nornir-NetmikoSendCommand.py", line 10, in configure
+    loopbackTask.nr.run(task=netmiko_send_config, config_commands = ["int lo200", "int lo201"])
+NameError: name 'loopbackTask' is not defined
+
+2021-07-20 16:43:47,262 -  nornir.core -     INFO -        run() - Running task 'configure' with args {} on 2 hosts
+2021-07-20 16:43:47,264 - nornir.core.task -    ERROR -      start() - Host 'vIOS-R1': task 'configure' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Nornir-NetmikoSendCommand.py", line 10, in configure
+    loopbackTask.run(task=netmiko_send_config, config_commands = ["int lo200", "int lo201"])
+NameError: name 'loopbackTask' is not defined
+
+2021-07-20 16:43:47,265 - nornir.core.task -    ERROR -      start() - Host 'vEOS': task 'configure' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Nornir-NetmikoSendCommand.py", line 10, in configure
+    loopbackTask.run(task=netmiko_send_config, config_commands = ["int lo200", "int lo201"])
+NameError: name 'loopbackTask' is not defined
+
+2021-07-20 16:44:35,213 -  nornir.core -     INFO -        run() - Running task 'configure' with args {} on 2 hosts
+2021-07-20 16:45:01,365 -  nornir.core -     INFO -        run() - Running task 'configure' with args {} on 2 hosts

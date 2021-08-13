@@ -1,0 +1,28 @@
+! boot system flash:/vEOS-lab.swi
+!
+transceiver qsfp default-mode 4x10G
+!
+hostname vEOS-SW
+!
+spanning-tree mode mstp
+!
+no aaa root
+!
+username admin privilege 15 role network-admin secret sha512 $6$mOizj7Qabd7vAH8r$f9atIshTW1Tn1emLq8cvaiz.6FZnhMqvkx1bSFNl1P4W9EgGJ2YeNpD.EL71eOMJlzdUznBHrZlN6gHcw6IFC.
+!
+interface Ethernet1
+!
+interface Ethernet2
+!
+interface Ethernet3
+!
+interface Management1
+   ip address 192.168.2.121/24
+!
+no ip routing
+!
+management api http-commands
+   no shutdown
+!
+!
+end

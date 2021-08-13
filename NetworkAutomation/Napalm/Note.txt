@@ -1,0 +1,2 @@
+You have to enable SCP on your device
+If you're using IOS, you must have netmiko installed

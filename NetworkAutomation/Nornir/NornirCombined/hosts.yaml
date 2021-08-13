@@ -1,0 +1,12 @@
+---
+vIOS-R1:
+    hostname: 192.168.2.111
+    username: "admin"
+    password: "admin"
+    platform: "ios"
+
+vEOS:
+    hostname: 192.168.2.121
+    username: "admin"
+    password: "admin"
+    platform: "eos"

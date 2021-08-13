@@ -1,0 +1,59 @@
+2021-07-20 14:45:51,076 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces']} on 2 hosts
+2021-07-20 14:45:56,128 - nornir.core.task -    ERROR -      start() - Host 'vIOS-R1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 935, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/util.py", line 283, in retry_on_signal
+    return function()
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/napalm/base/base.py", line 92, in _netmiko_open
+    **netmiko_optional_args
+  File "/usr/local/lib/python3.6/site-packages/netmiko/ssh_dispatcher.py", line 326, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/cisco/cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 350, in __init__
+    self._open()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 355, in _open
+    self.establish_connection()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 957, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.2.111:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "/usr/local/lib/python3.6/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/usr/local/lib/python3.6/site-packages/napalm/ios/ios.py", line 170, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "/usr/local/lib/python3.6/site-packages/napalm/base/base.py", line 95, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.2.111
+
+2021-07-20 14:46:38,320 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces']} on 2 hosts

@@ -1,0 +1,8 @@
+terminal length 0
+conf t
+int lo100
+ip address 10.10.10.10 255.255.255.0
+no shut
+exit
+exit
+show ip int br

@@ -1,0 +1,2 @@
+Config_file and default_file are not mandatory, only host_file is.
+You can move config file and default file into host one. 
