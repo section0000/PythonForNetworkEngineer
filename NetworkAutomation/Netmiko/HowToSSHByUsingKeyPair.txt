@@ -1,0 +1,61 @@
+		SSH using key pair
+With this approach, you don't need to type password whenever you ssh to a device
+1. On your system (Linux, Window,...), create a key pair (private key and public key. 
+   .pub is public key)
+   [root@section0000 ~]#ssh-keygen -b 2024 -t rsa
+      b: bit
+      t: type
+
+   The maximum line length at the Cisco CLI is 254 characters, but it's convenient to wrap 
+      smaller than this so that it fits on a terminal line
+   [root@section0000 ~]#fold -w 70 R1-adminkey.pub
+      w: width
+
+   It will return a key divided into mutliple parts. Take it to the second step
+
+   You can check the fingerprint of the key
+   [root@section0000 ~]#ssh-keygen -f R1-adminkey.pub -l
+      f: filename
+      l: show fingerprint
+
+*SSH fingerprint: Generally it's for easy identification/verification of the host you are 
+   connecting to.
+
+2. Go into the device, import the public key
+   R1(config)#ip ssh pubkey-chain 
+   R1(conf-ssh-pubkey)#username adminkey
+   R1(conf-ssh-pubkey-user)#key-string
+   R1(conf-ssh-pubkey-data)#$2EAAAADAQABAAABAQDPiRH1oIH2KruakCBLJ+BA7EFFU/0rNW
+   R1(conf-ssh-pubkey-data)#$c1rDBwU3x9auyvlE2fEqCO4iI7qqQKSQoCqPLI0w7KgNvPzSq
+   R1(conf-ssh-pubkey-data)#$3Ppasbf+njd4TTjAW3TZV5HTNd9jcD0Qq+qiuSX6dTgOl85HR
+   R1(conf-ssh-pubkey-data)#$jZ1BpTDj+cPds9zn6UutlGErmz4aNiPAtSJvpX8XYIo0VXSqH
+   R1(conf-ssh-pubkey-data)#$OibBZTqF8HybfEl/4AV7Y6TyJFW3/+Vm0D8wsvZ4AyLaPQGxe
+   R1(conf-ssh-pubkey-data)#DKDvuo1FMTlTR0l9kESa/f0O4lhkQD root@section0000
+   R1(conf-ssh-pubkey-data)#exit
+
+   You can see it in "show run":
+   ip ssh pubkey-chain
+     username adminkey
+      key-hash ssh-rsa 2C85FA570120F1283944B330875725E7 root@section0000
+
+   (Compare it to the one on your system to check whether they're matched:
+      [root@section0000 KeyPair]# ssh-keygen -f Router1-adminkey.pub -l
+      2048 SHA256:xH1AY1OA9nG3G9+Yq/Y4EnGGmhpS8kHkAaFNyH+k/Og root@section0000 (RSA)
+   *It seems like in newer versions, the key of system is encrypted. It means that you will see
+      it's different than the key on the device)
+
+
+*If you create a password for your key, you have to declare it in your script.
+In detail, add one more key-value pair in your dictionary
+        router = {
+                "username": username,
+                "ip": ip,
+                "device_type": "cisco_ios",
+                "password": password, // Add this 
+                "secret": enablePassword,
+                "use_keys": True,
+                "key_file": "/root/NetworkAutomation/SSH-Netmiko/KeyPair/R1-adminkey",
+
+        }
+
+
