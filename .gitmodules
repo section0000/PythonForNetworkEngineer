@@ -1,0 +1,3 @@
+[submodule "NetworkAutomation/NETCONF/yang"]
+	path = NetworkAutomation/NETCONF/yang
+	url = https://github.com/YangModels/yang.git
