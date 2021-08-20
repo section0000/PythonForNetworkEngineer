@@ -32,4 +32,4 @@ def checkTCPPortStatus(ip, port):
 checkTCPPortStatus("192.168.2.10", 44)
 checkTCPPortStatus("192.168.2.10", 135)
 checkTCPPortStatus("192.168.2.12", 80)
-checkTCPPortStatus("192.168.2.12", 123)
+checkTCPPortStatus("192.168.2.12", 135)

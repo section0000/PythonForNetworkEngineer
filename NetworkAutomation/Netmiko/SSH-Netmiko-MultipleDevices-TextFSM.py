@@ -30,7 +30,7 @@ for ip in routerList:
 #	output = connection.send_config_from_file(config_file="RouterCommand.txt")
 #	print(output)
 
-	output = connection.send_command_timing("show ip int br", use_textfsm=True)
+	output = connection.send_command_timing("show ip int br")
 	#print(output)
 
 	# Get specific information

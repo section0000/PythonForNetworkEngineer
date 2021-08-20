@@ -39,10 +39,9 @@ With this approach, you don't need to type password whenever you ssh to a device
       key-hash ssh-rsa 2C85FA570120F1283944B330875725E7 root@section0000
 
    (Compare it to the one on your system to check whether they're matched:
-      [root@section0000 KeyPair]# ssh-keygen -f Router1-adminkey.pub -l
-      2048 SHA256:xH1AY1OA9nG3G9+Yq/Y4EnGGmhpS8kHkAaFNyH+k/Og root@section0000 (RSA)
-   *It seems like in newer versions, the key of system is encrypted. It means that you will see
-      it's different than the key on the device)
+      [root@section0000 KeyPair]# ssh-keygen -l -E md5 -f Router1-adminkey.pub (Fingerprint in
+         Cisco devices is hashed by using MD5. So you need to specify "-E md5")
+      2024 MD5:bc:d0:d9:e3:5e:34:d1:d4:5e:b4:f9:cf:62:18:72:fc root@section0000 (RSA)
 
 
 *If you create a password for your key, you have to declare it in your script.
