@@ -31,8 +31,21 @@ time.sleep(0.5)
 output = access.recv(65000)
 print(output.decode("ascii"))
 
-# Not work???
 """
+# Not work. It arises an error:
+#========================= Executing command: show version =========================
+#Secsh channel 1 open FAILED: : Resource shortage
+#Traceback (most recent call last):
+#  File "SSH-Paramiko-HostKeyPolicy-Cisco.py", line 42, in <module>
+#    stdin, stdout, stderr = session.exec_command(command)
+#  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 508, in exec_command
+#    chan = self._transport.open_session(timeout=timeout)
+#  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 879, in open_session
+#    timeout=timeout,
+#  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 1017, in open_channel
+#    raise e
+#paramiko.ssh_exception.ChannelException: ChannelException(4, 'Resource shortage')
+
 commands = ["show version"]
 
 for command in commands:
@@ -44,4 +57,5 @@ for command in commands:
     if error:
         print(error)
 """
+
 session.close()
