@@ -1,0 +1,18 @@
+ session.connect(hostname=host,
+                 username=username,
+                 password=password,
+                )
+
+If you don't have any key files in <Path>/.ssh/, this works fine.
+But, if you have at least 1 key file there, even though it's not exact key you desire to use, you must set look_for_keys
+   parameter to false. Otherwise, you will get "Authentication failed" although you have typed password correctly
+
+ session.connect(hostname=host,
+                 username=username,
+                 password=password,
+              	 look_for_keys=False
+                )
+
+
+
+

@@ -15,7 +15,9 @@ session.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 session.connect(ip,
                 port=22,
                 username=username,
-                password=password)
+                password=password,
+                look_for_keys=False
+               )
 
 access = session.invoke_shell() # Send shell commands to the device
 access.send(b"enable\n")
