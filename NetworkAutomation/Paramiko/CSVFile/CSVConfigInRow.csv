@@ -1,0 +1,3 @@
+192.168.2.101,enable,123,terminal len 0,conf t,int lo0,no shut,exit,exit,show ip int brief,show run int e0/1,,,
+192.168.2.102,enable,123,terminal len 0,conf t,int lo10,ip address 10.0.0.1 255.255.255.0,,,int lo11,ip address 11.0.0.1 255.255.255.0,,do show run int lo10,do sho run int lo11
+,enable,123,terminal len 0,conf t,int e0/2,no shut,,,,,,,

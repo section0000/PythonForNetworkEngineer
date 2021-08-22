@@ -1,0 +1,14 @@
+192.168.2.101,192.168.2.102,
+enable,enable,enable
+123,123,123
+terminal len 0,terminal len 0,terminal len 0
+conf t,conf t,conf t
+int lo0,int lo10,int e0/2
+no shut,ip address 10.0.0.1 255.255.255.0,no shut
+exit,,
+exit,,
+show ip int brief,int lo11,
+show run int e0/1,ip addres 11.0.0.1 255.255.255.0,
+,,
+,do show run int lo10,
+,do show run int lo11,
