@@ -1,0 +1,11 @@
+		How to run your script without keeping terminal opened
+Use "nohup" in Linux
+Ex:
+   [root@section0000 Logging]# nohup python3 Test.py
+
+By default, it will create a new file in the current directory called nohup.out. You can change that by forward the 
+   output to "null"
+   [root@section0000 Logging]# nohup python3 Test.py > /dev/null 
+
+You can display its process ID by adding "&" to the end of the command
+   [root@section0000 Logging]# nohup python3 Test.py > /dev/null &    
