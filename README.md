@@ -1,8 +1,10 @@
 # PythonForNetworkEngineer
-Some Python scripts I have written throughout my study. They were all written using Python 3 on CentOS 8. Hence, some of them may not work properly when running on Windows
+Some Python scripts I wrote throughout my study. They were all written using Python 3 on CentOS 8. Hence, some of them may not work properly when running on Windows
 
 # Topology
 <img width="960" alt="Topology" src="https://user-images.githubusercontent.com/65224270/130184075-182f107a-c456-40fc-81de-00ec22babc64.png">
+<img width="928" alt="1" src="https://user-images.githubusercontent.com/65224270/161938612-bb4b3835-94a8-4e34-bd9d-abc24a696577.png">
+
 
 # For NETCONF
 If you don't have a Cisco CSR like me, you can use a devnet sandbox instead
