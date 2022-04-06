@@ -6,6 +6,7 @@ Some Python scripts I wrote throughout my study. They were all written using Pyt
 
 # For NETCONF
 If you don't have a Cisco CSR, you can use a devnet sandbox instead
-<img width="960" alt="NETCONF - Source" src="https://user-images.githubusercontent.com/65224270/130185115-dbae62d3-4086-41af-a23b-053cd2906d63.png">
-<img width="960" alt="NETCONF - 2" src="https://user-images.githubusercontent.com/65224270/130185126-6becb41a-06a8-4fd2-a456-48b380bdb8ab.png">
 
+<img width="927" alt="2" src="https://user-images.githubusercontent.com/65224270/161939243-a8c644e5-4d61-47f1-b0a1-d6040e5eca52.png">
+
+<img width="928" alt="3" src="https://user-images.githubusercontent.com/65224270/161939499-8494542a-031e-4f3a-bd2b-f2ca90963f93.png">
