@@ -1,5 +1,5 @@
 # PythonForNetworkEngineer
-Some Python scripts I wrote throughout my study. They were all written using Python 3 on CentOS 8. Hence, some of them may not work properly when running on Windows
+Some Python scripts I wrote throughout my study. They were all written with Python 3 on CentOS 8. Hence, some of them may not work properly when running on Windows
 
 # Topology
 <img width="928" alt="1" src="https://user-images.githubusercontent.com/65224270/161938612-bb4b3835-94a8-4e34-bd9d-abc24a696577.png">
