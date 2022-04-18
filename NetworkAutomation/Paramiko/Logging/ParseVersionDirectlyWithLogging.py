@@ -25,7 +25,7 @@ EMAIL_PASSWORD = os.environ.get("EMAIL_PASSWORD")
 
 
 # Import logging
-import logging, logging.handlers # logging.handlers is for email usage
+import logging, logging.handlers # logging.handlers is for using email
 
 # Define a logger
 logger = logging.getLogger("SSH_Parser") # Just a name for this logger
